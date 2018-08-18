@@ -1,7 +1,7 @@
 
 var friendsArray = [{
     "name": "Hillary Banks",
-    "photo": "hhttps://vignette.wikia.nocookie.net/thefreshprinceofbelair/images/1/10/200px-Hilarybanks.jpg/revision/latest?cb=20111008161204",
+    "photo": "https://vignette.wikia.nocookie.net/thefreshprinceofbelair/images/1/10/200px-Hilarybanks.jpg/revision/latest?cb=20111008161204",
     "scores": [
         1,
         1,
