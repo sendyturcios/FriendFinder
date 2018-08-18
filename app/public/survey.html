@@ -1,13 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!--jquery-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder Survey</title>
+
+    <script src="htmlRoutes.js"></script>
+    <script src="apiRoutes.js"></script>
+    <script src="server.js"></script>
+
 </head>
+
 <body>
-    
+
+<div class = "surveyContainer"></div>
+    <h1>Survey Questions</h1>
+
+    <h2>About You</h2>
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label for="photo">Insert Photo Link: </label>
+        <input type="text" class="form-control" id="photo">
+    </div>
+
+    <div id="wholeSurvey">
+        <div>
+            <h3> Question 1</h3>
+            <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+            <select class="form-control" id="ans1">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 2</h3>
+            <h4>You'd rather do things quickly than perfectly.</h4>
+            <select class="form-control" id="ans2">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 3</h3>
+            <h4>You are always busy.</h4>
+            <select class="form-control" id="ans3">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 4</h3>
+            <h4>You prefer variety to routine.</h4>
+            <select class="form-control" id="ans4">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 5</h3>
+            <h4>You seek adventure in nature.</h4>
+            <select class="form-control" id="ans5">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 6</h3>
+            <h4>You believe that there is no absolute right and wrong.</h4>
+            <select class="form-control" id="ans6">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 7</h3>
+            <h4>You do a lot in your spare time.</h4>
+            <select class="form-control" id="ans7">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 8</h3>
+            <h4>You believe that others have good intentions.</h4>
+            <select class="form-control" id="ans8">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 9</h3>
+            <h4>You stick to the rules.</h4>
+            <select class="form-control" id="ans9">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+        <div>
+            <h3> Question 10</h3>
+            <h4>You keep your promises.</h4>
+            <select class="form-control" id="ans10">
+                <option value="1">1 (Strongly Disgree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree) </option>
+            </select>
+        </div>
+
+    </div>
+        <!-- Button trigger modal-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">
+            Submit
+        </button>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends</a> |
+                    <a href="https://sendyturcios.github.io/FriendFinder/">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Your NEW FRIEND</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>>
+                        <img id="matchImg" src="" alt="image of person you matched">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+
+<script>
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        var userData = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+                $("#ans1").val().trim(),
+                $("#ans2").val().trim(),
+                $("#ans3").val().trim(),
+                $("#ans4").val().trim(),
+                $("#ans5").val().trim(),
+                $("#ans6").val().trim(),
+                $("#ans7").val().trim(),
+                $("#ans8").val().trim(),
+                $("#ans9").val().trim(),
+                $("#ans10").val().trim()
+
+            ]
+        };
+        var currentURL = window.location.origin;
+        $.post(currentURL + "/api/friends", userData, function (data) {
+            $("#matchName").text(data.name);
+            $("#matchImg").attr("src", data.photo);
+            $("#modal").modal("toggle");
+            console.log("Working :D");
+        });
+        //need to show friend at first click correctly and not on the second submission
+    });
+</script>
+
+
 </html>
